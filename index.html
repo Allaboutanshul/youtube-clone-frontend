@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="YouTube - Watch, share and upload videos. Subscribe to channels, discover trending content, and enjoy your favorite creators." />
+  <title>YouTube</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+<body class="dark-mode">
+
+  <!-- ========== HEADER ========== -->
+  <header class="yt-header" id="yt-header">
+    <div class="header-left">
+      <button class="icon-btn menu-toggle" id="menu-toggle" title="Menu" aria-label="Open sidebar menu">
+        <span class="material-icons">menu</span>
+      </button>
+      <a href="#" class="logo-link" aria-label="YouTube Home">
+        <div class="yt-logo">
+          <svg class="yt-logo-icon" viewBox="0 0 90 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M27.9727 3.12324C27.6435 1.89289 26.6768 0.926297 25.4464 0.597043C23.2043 2.32885e-07 14.2976 0 14.2976 0C14.2976 0 5.39077 2.32885e-07 3.14869 0.597043C1.91834 0.926297 0.951585 1.89289 0.622331 3.12324C0.0253906 5.36532 0.0253906 10.0132 0.0253906 10.0132C0.0253906 10.0132 0.0253906 14.6611 0.622331 16.9032C0.951585 18.1336 1.91834 19.0739 3.14869 19.4031C5.39077 20.0001 14.2976 20.0001 14.2976 20.0001C14.2976 20.0001 23.2043 20.0001 25.4464 19.4031C26.6768 19.0739 27.6435 18.1336 27.9727 16.9032C28.5697 14.6611 28.5697 10.0132 28.5697 10.0132C28.5697 10.0132 28.5441 5.36532 27.9727 3.12324Z" fill="#FF0000"/>
+            <path d="M11.4213 14.2954L18.8808 10.0132L11.4213 5.73095V14.2954Z" fill="white"/>
+          </svg>
+          <span class="logo-text">YouTube</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="header-center">
+      <form class="search-form" id="search-form" role="search">
+        <div class="search-container">
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="Search"
+            autocomplete="off"
+            aria-label="Search YouTube"
+          />
+          <button type="submit" class="search-btn" id="search-btn" aria-label="Search">
+            <span class="material-icons">search</span>
+          </button>
+        </div>
+        <button type="button" class="icon-btn mic-btn" id="mic-btn" aria-label="Search with your voice">
+          <span class="material-icons">mic</span>
+        </button>
+      </form>
+    </div>
+
+    <div class="header-right">
+      <button class="icon-btn" id="video-create-btn" title="Create" aria-label="Create">
+        <span class="material-icons">videocam</span>
+      </button>
+      <button class="icon-btn notif-btn" id="notif-btn" title="Notifications" aria-label="Notifications">
+        <span class="material-icons">notifications</span>
+        <span class="notif-badge">9+</span>
+      </button>
+      <button class="theme-toggle icon-btn" id="theme-toggle" title="Toggle theme" aria-label="Toggle dark/light mode">
+        <span class="material-icons" id="theme-icon">light_mode</span>
+      </button>
+      <div class="avatar-wrapper" id="avatar-btn" role="button" tabindex="0" aria-label="User account">
+        <div class="user-avatar">
+          <span>Y</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== LAYOUT ========== -->
+  <div class="layout" id="layout">
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="sidebar" id="sidebar" aria-label="Sidebar navigation">
+      <nav class="sidebar-nav">
+
+        <div class="nav-section">
+          <a href="#" class="nav-item active" id="nav-home" data-filter="all">
+            <span class="material-icons">home</span>
+            <span class="nav-label">Home</span>
+          </a>
+          <a href="#" class="nav-item" id="nav-shorts" data-filter="shorts">
+            <span class="nav-icon-shorts">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.77 10.32l-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.23-2.53-5.06-1.56L6 6.94c-1.29.68-2.06 2.09-1.98 3.56.06 1.helperText.02 1.16.29 1.68l1.2.5L4 12.94c-1.84.96-2.53 3.23-1.56 5.06.97 1.83 3.23 2.53 5.06 1.56l8.5-4.5c1.29-.68 2.06-2.09 1.98-3.56-.06-1.02-.52-1.96-1.21-2.68zM10 14.5v-5l5 2.5-5 2.5z"/></svg>
+            </span>
+            <span class="nav-label">Shorts</span>
+          </a>
+          <a href="#" class="nav-item" id="nav-subscriptions" data-filter="subscriptions">
+            <span class="material-icons">subscriptions</span>
+            <span class="nav-label">Subscriptions</span>
+          </a>
+        </div>
+
+        <div class="nav-divider"></div>
+
+        <div class="nav-section">
+          <p class="nav-section-title">You</p>
+          <a href="#" class="nav-item" data-filter="library">
+            <span class="material-icons">video_library</span>
+            <span class="nav-label">Library</span>
+          </a>
+          <a href="#" class="nav-item" data-filter="history">
+            <span class="material-icons">history</span>
+            <span class="nav-label">History</span>
+          </a>
+          <a href="#" class="nav-item">
+            <span class="material-icons">playlist_play</span>
+            <span class="nav-label">Playlists</span>
+          </a>
+          <a href="#" class="nav-item">
+            <span class="material-icons">smart_display</span>
+            <span class="nav-label">Your videos</span>
+          </a>
+          <a href="#" class="nav-item">
+            <span class="material-icons">watch_later</span>
+            <span class="nav-label">Watch later</span>
+          </a>
+          <a href="#" class="nav-item">
+            <span class="material-icons">thumb_up</span>
+            <span class="nav-label">Liked videos</span>
+          </a>
+        </div>
+
+        <div class="nav-divider"></div>
+
+        <div class="nav-section">
+          <p class="nav-section-title">Subscriptions</p>
+          <a href="#" class="nav-item sub-item">
+            <div class="sub-avatar" style="background: linear-gradient(135deg,#ff6b6b,#ee5a24)">T</div>
+            <span class="nav-label">TechWorld</span>
+          </a>
+          <a href="#" class="nav-item sub-item">
+            <div class="sub-avatar" style="background: linear-gradient(135deg,#a29bfe,#6c5ce7)">C</div>
+            <span class="nav-label">CodeWithMe</span>
+          </a>
+          <a href="#" class="nav-item sub-item">
+            <div class="sub-avatar" style="background: linear-gradient(135deg,#55efc4,#00b894)">G</div>
+            <span class="nav-label">GamingPro</span>
+          </a>
+          <a href="#" class="nav-item sub-item">
+            <div class="sub-avatar" style="background: linear-gradient(135deg,#fd79a8,#e84393)">M</div>
+            <span class="nav-label">MusicVibes</span>
+          </a>
+          <a href="#" class="nav-item sub-item">
+            <div class="sub-avatar" style="background: linear-gradient(135deg,#fdcb6e,#e17055)">F</div>
+            <span class="nav-label">FoodieCorner</span>
+          </a>
+        </div>
+
+        <div class="nav-divider"></div>
+
+        <div class="nav-section">
+          <p class="nav-section-title">Explore</p>
+          <a href="#" class="nav-item" data-filter="trending">
+            <span class="material-icons">local_fire_department</span>
+            <span class="nav-label">Trending</span>
+          </a>
+          <a href="#" class="nav-item" data-filter="music">
+            <span class="material-icons">music_note</span>
+            <span class="nav-label">Music</span>
+          </a>
+          <a href="#" class="nav-item" data-filter="gaming">
+            <span class="material-icons">sports_esports</span>
+            <span class="nav-label">Gaming</span>
+          </a>
+          <a href="#" class="nav-item">
+            <span class="material-icons">movie</span>
+            <span class="nav-label">Movies</span>
+          </a>
+          <a href="#" class="nav-item">
+            <span class="material-icons">live_tv</span>
+            <span class="nav-label">Live</span>
+          </a>
+          <a href="#" class="nav-item">
+            <span class="material-icons">school</span>
+            <span class="nav-label">Learning</span>
+          </a>
+        </div>
+
+        <div class="nav-divider"></div>
+
+        <div class="nav-section footer-nav">
+          <a href="#" class="nav-link-small">About</a>
+          <a href="#" class="nav-link-small">Press</a>
+          <a href="#" class="nav-link-small">Copyright</a>
+          <a href="#" class="nav-link-small">Contact us</a>
+          <a href="#" class="nav-link-small">Creators</a>
+          <a href="#" class="nav-link-small">Advertise</a>
+          <a href="#" class="nav-link-small">Developers</a>
+          <p class="copyright-text">© 2025 YouTube, LLC</p>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="main-content" id="main-content">
+
+      <!-- Filter Chips -->
+      <div class="filter-bar" id="filter-bar">
+        <div class="filter-chips" id="filter-chips">
+          <button class="chip active" data-chip="all" id="chip-all">All</button>
+          <button class="chip" data-chip="music">Music</button>
+          <button class="chip" data-chip="gaming">Gaming</button>
+          <button class="chip" data-chip="tech">Technology</button>
+          <button class="chip" data-chip="cooking">Cooking</button>
+          <button class="chip" data-chip="travel">Travel</button>
+          <button class="chip" data-chip="education">Education</button>
+          <button class="chip" data-chip="sports">Sports</button>
+          <button class="chip" data-chip="news">News</button>
+          <button class="chip" data-chip="fashion">Fashion</button>
+          <button class="chip" data-chip="comedy">Comedy</button>
+          <button class="chip" data-chip="fitness">Fitness</button>
+        </div>
+        <div class="filter-fade-right"></div>
+      </div>
+
+      <!-- Video Grid -->
+      <div class="video-grid" id="video-grid" aria-label="Video feed">
+        <!-- Videos injected by JS -->
+      </div>
+
+      <!-- Skeleton Loader -->
+      <div class="skeleton-grid" id="skeleton-grid" aria-hidden="true">
+        <!-- Skeletons injected by JS -->
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ========== VIDEO MODAL ========== -->
+  <div class="video-modal-overlay" id="video-modal-overlay" aria-modal="true" role="dialog" aria-label="Video player">
+    <div class="video-modal" id="video-modal">
+      <button class="modal-close" id="modal-close" aria-label="Close video player">
+        <span class="material-icons">close</span>
+      </button>
+      <div class="modal-player">
+        <div class="player-wrapper">
+          <div class="player-screen" id="player-screen">
+            <div class="play-overlay" id="play-overlay">
+              <button class="big-play-btn" id="big-play-btn" aria-label="Play video">
+                <span class="material-icons">play_arrow</span>
+              </button>
+            </div>
+            <div class="player-thumbnail" id="player-thumbnail"></div>
+            <div class="video-gradient-bottom"></div>
+          </div>
+          <!-- Video Controls -->
+          <div class="player-controls" id="player-controls">
+            <div class="progress-bar-wrapper" id="progress-bar-wrapper">
+              <div class="progress-bar-bg" id="progress-bar-bg">
+                <div class="progress-bar-fill" id="progress-bar-fill" style="width: 0%"></div>
+                <div class="progress-thumb" id="progress-thumb" style="left: 0%"></div>
+              </div>
+            </div>
+            <div class="controls-row">
+              <div class="controls-left">
+                <button class="ctrl-btn" id="ctrl-play" aria-label="Play/Pause">
+                  <span class="material-icons" id="ctrl-play-icon">play_arrow</span>
+                </button>
+                <button class="ctrl-btn" id="ctrl-skip-back" aria-label="Rewind 10 seconds">
+                  <span class="material-icons">replay_10</span>
+                </button>
+                <button class="ctrl-btn" id="ctrl-skip-fwd" aria-label="Forward 10 seconds">
+                  <span class="material-icons">forward_10</span>
+                </button>
+                <div class="volume-group">
+                  <button class="ctrl-btn" id="ctrl-volume" aria-label="Mute/Unmute">
+                    <span class="material-icons" id="ctrl-volume-icon">volume_up</span>
+                  </button>
+                  <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="80" aria-label="Volume" />
+                </div>
+                <span class="time-display" id="time-display">0:00 / 5:42</span>
+              </div>
+              <div class="controls-right">
+                <button class="ctrl-btn" id="ctrl-settings" aria-label="Settings">
+                  <span class="material-icons">settings</span>
+                </button>
+                <button class="ctrl-btn" id="ctrl-fullscreen" aria-label="Fullscreen">
+                  <span class="material-icons">fullscreen</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-info">
+        <h1 class="modal-title" id="modal-title">Video Title</h1>
+        <div class="modal-meta">
+          <span id="modal-views">1.2M views</span>
+          <span class="dot">•</span>
+          <span id="modal-date">2 days ago</span>
+        </div>
+        <div class="modal-actions">
+          <button class="action-btn like-btn" id="like-btn" aria-label="Like this video">
+            <span class="material-icons">thumb_up</span>
+            <span id="like-count">45K</span>
+          </button>
+          <button class="action-btn" id="dislike-btn" aria-label="Dislike this video">
+            <span class="material-icons">thumb_down</span>
+            <span>Dislike</span>
+          </button>
+          <button class="action-btn" id="share-btn" aria-label="Share this video">
+            <span class="material-icons">share</span>
+            <span>Share</span>
+          </button>
+          <button class="action-btn" id="save-btn" aria-label="Save this video">
+            <span class="material-icons">bookmark_border</span>
+            <span>Save</span>
+          </button>
+          <button class="action-btn" id="more-btn" aria-label="More actions">
+            <span class="material-icons">more_horiz</span>
+          </button>
+        </div>
+        <div class="modal-channel">
+          <div class="channel-avatar-lg" id="channel-avatar-modal"></div>
+          <div class="channel-info-lg">
+            <p class="channel-name-lg" id="channel-name-modal">Channel Name</p>
+            <p class="channel-subs-lg" id="channel-subs-modal">1.2M subscribers</p>
+          </div>
+          <button class="subscribe-btn" id="subscribe-btn" aria-label="Subscribe to channel">Subscribe</button>
+        </div>
+        <div class="modal-description" id="modal-description">
+          <p>Description of the video goes here. This is where the creator would write about their content, links, and more...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== NOTIFICATION TOAST ========== -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
