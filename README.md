@@ -1,5 +1,4 @@
-# Youtube-clone-frontend
-A highly responsive, interactive, and feature-rich frontend YouTube clone built with HTML5, CSS3 (including theme toggling), and Vanilla JavaScript utilizing skeleton loading states and responsive media components.
+
 # YouTube Frontend Clone
 
 A pixel-perfect, highly interactive YouTube Clone built purely with HTML5, CSS3, and modern Vanilla JavaScript. This project focuses on building a dynamic, client-side video feed interface that mimics the look, feel, and structural logic of the native YouTube desktop and mobile application experience.
